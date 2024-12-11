@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .  # Path to your FastAPI app directory
+      dockerfile: Dockerfile  # Use a Dockerfile in the same directory
+    container_name: fastapi_app
+    ports:
+      - "8051:8051"  # Map port 8051 on the host to 8051 in the container
+    env_file:
+      - .env  # Load environment variables from the .env file
